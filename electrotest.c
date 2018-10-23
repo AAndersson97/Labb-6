@@ -5,7 +5,7 @@
 #include "libcomponent.h"
 
 int main() {
-  int v = 0; 
+  int volt = 0; 
   char koppling; 
   int antalKomponenter = 0;
   float *komponenter; 
