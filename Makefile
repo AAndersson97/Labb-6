@@ -7,14 +7,11 @@ LIB = ./lib/
 INSTDIR = /usr/lib/Uppgift6/
 
 lib: libcomponent.so libpower.so libresistance.so
-	rm -R $(LIB);\
-	mkdir $(LIB)
+	mkdir $(LIB) \
+	mv *.so $(LIB);
 
 electrotest: lib electrotest.o libcomponent.so libpower.so libresistance.so
-	mv libcomponent.so $(LIB); \
-	mv libpower.so $(LIB); \
-	mv libresistance.so $(LIB);\
-	$(CC) -o electrotest electrotest.o $(LIB)libcomponent.so $(LIB)libpower.so $(LIB)libresistance.so
+	$(CC) -o electrotest electrotest.o $(LIB) libcomponent.so $(LIB) libpower.so $(LIB) libresistance.so
 
 
 libcomponent.o: libcomponent.h libcomponent.c
