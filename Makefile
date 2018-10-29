@@ -6,7 +6,7 @@ CFLAGS = -fPIC -c
 LIBFLAGS = -shared -o
 INSTDIR = /usr/bin/Uppgift6/
 
-lib: libcomponent.so libpower.so libresistance.so
+lib: clean libcomponent.so libpower.so libresistance.so
 	mkdir $(LIB) 2> /dev/null; \
 	mv *.so $(LIB);
 
