@@ -34,12 +34,10 @@ libresistance.so: libresistance.o libresistance.h
 
 
 clean:
-	if [ -f "electrotest" ]; \
-	then \
-	rm electrotest;\
-	fi 
-	rm libresistance.o libpower.o libcomponent.o;\
-	rm -R $(LIB)
+	rm electrotest 2> /dev/null; \
+	rm libresistance.o libpower.o libcomponent.o  2> /dev/null; \
+	rm -R $(LIB) 2> /dev/null; \
+	return 0; 
 
 install: electrotest
 	sudo mkdir $(INSTDIR); \
