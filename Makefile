@@ -35,7 +35,7 @@ libresistance.so: libresistance.o libresistance.h
 
 clean:
 	rm electrotest 2> /dev/null; \
-	rm libresistance.o libpower.o libcomponent.o  2> /dev/null; \
+	rm libresistance.o libpower.o libcomponent.o 2> /dev/null; \
 	rm -R $(LIB) 2> /dev/null; \
 	return 0; 
 
