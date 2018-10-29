@@ -7,7 +7,7 @@ LIB = ./lib/
 INSTDIR = /usr/lib/Uppgift6/
 
 lib: libcomponent.so libpower.so libresistance.so
-	mkdir $(LIB); \
+	mkdir $(LIB) 2> /dev/null; \
 	mv *.so $(LIB);
 
 electrotest: lib electrotest.o libcomponent.so libpower.so libresistance.so
@@ -40,11 +40,14 @@ clean:
 	return 0; 
 
 install: electrotest
+	if ! [ -d $(INSTDIR) ]; \
+	then \
 	sudo mkdir $(INSTDIR); \
 	sudo cp electrotest $(INSTDIR); \
 	sudo cp -R $(LIB) $(INSTDIR); \
 	sudo chown $(USER) $(INSTDIR); \
-	sudo chown $(USER) $(INSTDIR)/lib; 
+	sudo chown $(USER) $(INSTDIR)/lib; \
+	fi
 
 uninstall:
 	sudo rm -R $(INSTDIR)
