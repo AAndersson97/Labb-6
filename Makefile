@@ -1,4 +1,4 @@
-all: lib electrotest
+all: clean lib electrotest
 
 CC = gcc
 LIB = ./lib/
