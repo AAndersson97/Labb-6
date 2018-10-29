@@ -1,9 +1,9 @@
 all: lib electrotest
 
 CC = gcc
-
 LIB = ./lib/
-
+CFLAGS = -fPIC -c
+LIBFLAGS = -shared -o
 INSTDIR = /usr/lib/Uppgift6/
 
 lib: libcomponent.so libpower.so libresistance.so
@@ -15,22 +15,22 @@ electrotest: lib electrotest.o libcomponent.so libpower.so libresistance.so
 
 
 libcomponent.o: libcomponent.h libcomponent.c
-	$(CC) -fPIC -c libcomponent.c
+	$(CC) $(CFLAGS) libcomponent.c
 
 libpower.o: libpower.h libpower.c
-	$(CC) -fPIC -c libpower.c
+	$(CC) $(CFLAGS) libpower.c
 
 libresistance.o: libresistance.h libresistance.c
-	$(CC) -fPIC -c libresistance.c
+	$(CC) $(CFLAGS) libresistance.c
 
 libcomponent.so: libcomponent.o libcomponent.h
-	$(CC) -shared -o libcomponent.so libcomponent.o
+	$(CC) $(LIBFLAGS) libcomponent.so libcomponent.o
 
 libpower.so: libpower.o libpower.h
-	$(CC) -shared -o libpower.so libpower.o
+	$(CC) $(LIBFLAGS) libpower.so libpower.o
 
 libresistance.so: libresistance.o libresistance.h
-	$(CC) -shared -o libresistance.so libresistance.o
+	$(CC) $(LIBFLAGS) libresistance.so libresistance.o
 
 
 clean:
