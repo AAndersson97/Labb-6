@@ -4,7 +4,7 @@ CC = gcc
 LIB = ./lib/
 CFLAGS = -fPIC -c
 LIBFLAGS = -shared -o
-INSTDIR = /usr/local/bin/Uppgift6/
+INSTDIR = /usr/bin/Uppgift6/
 
 lib: libcomponent.so libpower.so libresistance.so
 	mkdir $(LIB) 2> /dev/null; \
