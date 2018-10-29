@@ -42,11 +42,11 @@ clean:
 install: electrotest
 	if ! [ -d $(INSTDIR) ]; \
 	then \
-	sudo mkdir $(INSTDIR); \
-	sudo cp electrotest $(INSTDIR); \
-	sudo cp -R $(LIB) $(INSTDIR); \
-	sudo chown $(USER) $(INSTDIR); \
-	sudo chown $(USER) $(INSTDIR)/lib; \
+		sudo mkdir $(INSTDIR); \
+		sudo cp electrotest $(INSTDIR); \
+		sudo cp -R $(LIB) $(INSTDIR); \
+		sudo chown $(USER) $(INSTDIR); \
+		sudo chown $(USER) $(INSTDIR)/lib; \
 	fi
 
 uninstall:
