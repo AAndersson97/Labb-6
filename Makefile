@@ -50,4 +50,7 @@ install: electrotest
 	fi
 
 uninstall:
-	sudo rm -R $(INSTDIR)
+	if [ -d $(INSTDIR) ]; \
+	then \
+		sudo rm -R $(INSTDIR); \
+	fi 
