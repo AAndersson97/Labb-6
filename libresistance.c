@@ -3,7 +3,7 @@
 
 float calc_resistance(int count, char conn, float *array) {
 	float totalResistance = 0.0; 
-	if (sizeof(array) == 0 || count < 1 || ((conn != 'P'|| conn != 'p') && (conn != 'S' || conn != 's'))) {
+	if (sizeof(array) == 0 || count < 1 || ((conn != 'P' && conn != 'p') && (conn != 'S' && conn != 's'))) {
 		return -1; 	
 	}
 		
