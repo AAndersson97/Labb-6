@@ -39,12 +39,6 @@ int e_resistance(float orig_resistance, float *res_array)
 		}	
 	}
 
-	
-	//for(i=0;i<3;i++)
-	  //{
-//
-	//    printf("%f\n", res_array[i]); //skriver ut de resistorer som lagts till i res_array
-	  //}
 
 	return count;
 
