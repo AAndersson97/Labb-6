@@ -4,7 +4,6 @@
 float calc_resistance(int count, char conn, float *array) {
 	float totalResistance = 0.0; 
 	if (sizeof(array) == 0 || count < 1 || (conn != 'P' && conn != 'S')) {
-		printf("Size of array: %ld, count: %d, conn: %c \n", sizeof(array), count, conn);
 		return -1; 	
 	}
 		
