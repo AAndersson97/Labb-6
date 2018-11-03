@@ -27,6 +27,9 @@ int main() {
   }
   
   resistance = calc_resistance(antalKomponenter, koppling, komponenter); 
+  if (resistance == -1) {
+    return -1;
+  }
   printf("Ersättningsresistans:\n%.1f ohm \n", resistance);
   printf("Effekt:\n%.2f W \n", calc_power_r(volt, resistance));
   totalResistanser = e_resistance(resistance, resistanser); 
