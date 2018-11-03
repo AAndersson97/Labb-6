@@ -7,7 +7,7 @@ float calc_resistance(int count, char conn, float *array) {
 		return -1; 	
 	}
 		
-	if (conn == 'P') {
+	if (conn == 'P' || conn == 'p') {
 		for (int counter = 0; counter < count; counter++) {
 			if (array[counter] == 0) {
 				return 0;			
