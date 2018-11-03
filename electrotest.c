@@ -36,5 +36,6 @@ int main() {
     printf("%.0f\n", resistanser[i]);
   }
   
+  free(komponenter);
    
 }
