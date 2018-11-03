@@ -28,6 +28,7 @@ int main() {
   
   resistance = calc_resistance(antalKomponenter, koppling, komponenter); 
   if (resistance == -1) {
+    printf("Ett fel uppstod");
     return -1;
   }
   printf("Ersättningsresistans:\n%.1f ohm \n", resistance);
